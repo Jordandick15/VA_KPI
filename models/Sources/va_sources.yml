@@ -9,3 +9,4 @@ sources:
       - name: global_meta
       - name: vaactuals_v2_latest
       - name: consensus_v2_latest
+      - name: period_meta_advanced_v2

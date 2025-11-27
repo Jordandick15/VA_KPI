@@ -30,8 +30,30 @@ actuals_aligned AS (
         a.NEXT_YEAR,
         a.DTYPE
     FROM {{ ref('va_actuals') }} a
+),
+
+base AS (
+    SELECT * FROM consensus_aligned
+    UNION ALL
+    SELECT * FROM actuals_aligned
+),
+
+period_meta AS (
+    SELECT *
+    FROM {{ ref('va_period_meta') }}
 )
 
-SELECT * FROM consensus_aligned
-UNION ALL
-SELECT * FROM actuals_aligned
+SELECT
+    b.*,
+    p.PERIODFREQUENCYTYPE,
+    p.ISREPORTED,
+    p.EXACTPERIODENDDATE,
+    p.EARNINGSDATE,
+    p.EARNINGSANNOUNCEMENTTIMING,
+    p.RELATIVEPERIOD
+
+FROM base b
+LEFT JOIN period_meta p
+    ON b.VACOMPANYID = p.VACOMPANYID
+   AND b.PERIOD = p.REPORTINGPERIOD
+
