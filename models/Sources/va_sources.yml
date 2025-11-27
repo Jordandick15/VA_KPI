@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: va
+    database: SPGLOBALXPRESSCLOUD_VISIBLEALPHA_VISIBLEALPHA_ALL_REF_PRICING
+    schema: VA
+    tables:
+      - name: company_advanced_info_v2
+      - name: global_meta
+      - name: vaactuals_v2_latest
+      - name: consensus_v2_latest
