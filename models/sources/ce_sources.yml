@@ -6,3 +6,9 @@ sources:
     schema: USA1_DAILY_SIGNAL
     tables:
       - name: PERIOD_SYM_SEG_EMAX
+
+  - name: ce_combined
+    database: CE_TRANSACT_USA_DAILY_SIGNAL
+    schema: COMBINED_USA1_USA2_DAILY_SIGNAL
+    tables:
+      - name: PERIOD_SYM_SEG_EMAX
