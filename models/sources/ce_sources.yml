@@ -2,7 +2,6 @@ version: 2
 
 sources:
   - name: ce_usa1
-    description: "CE USA1 daily signal raw data"
     database: CE_TRANSACT_USA_DAILY_SIGNAL
     schema: USA1_DAILY_SIGNAL
     tables:
